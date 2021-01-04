@@ -1,0 +1,40 @@
+package mobbank;
+
+
+public class Banking {
+     public void start_banking(){
+         String labonnya_pin="1234"; 
+         String tashfia_pin="7890"; 
+         String asif_pin;
+         Account labonnya = new Account ("Labonnya","01766929644",labonnya_pin);
+         Account tashfia = new Account ("Tashfia", "01625434063", tashfia_pin); 
+         Account asif = new Account ("Asif", "01876543433"); 
+         System.out.println(labonnya);
+         System.out.println(tashfia);
+         System.out.println(asif);
+         labonnya.add_money(1500);
+         tashfia.add_money(1000);
+         asif.add_money(3000); 
+         labonnya.cash_out(500, tashfia_pin);
+         
+         if(labonnya.pin_upate(labonnya_pin, "3245"))
+         {
+             labonnya_pin="3245"; 
+         }
+         if(asif.pin_set("2211"))
+         {
+             asif_pin="2211";
+         }
+         
+         System.out.println(labonnya.getAccount_holder_name()+ ", "
+                + labonnya.getAccount_phone_number() + ", "
+                + labonnya.getBalance());
+         
+         System.out.println(tashfia.getAccount_holder_name()+ ", "
+                + tashfia.getAccount_phone_number() + ", "
+                + tashfia.getBalance()); 
+         
+        labonnya.cash_out(1200, labonnya_pin);
+        asif.cash_out(1000, "2211");
+     }
+}
