@@ -1,0 +1,10 @@
+package mobbank;
+
+
+public class MainClass {
+    public static void main(String[] args) {
+        Banking start = new Banking();
+        start.start_banking();
+    }
+    
+} 
